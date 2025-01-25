@@ -1,0 +1,11 @@
+progress_tracking_flow:
+  description: "Track user’s therapy progress over time."
+  nodes:
+    - type: "action"
+      name: "log_session_data"
+      api_call: "save_user_progress"
+      next_node: "review_progress"
+    - type: "action"
+      name: "review_progress"
+      api_call: "display_user_improvement"
+      next_node: "session_end_flow"

@@ -1,0 +1,7 @@
+mindfulness_exercise:
+  description: "Guide the user through a mindfulness session."
+  steps:
+    - message: "Let’s focus on the present moment. Breathe deeply."
+    - action: "start_ar_mindfulness_guide"
+    - message: "Continue focusing on your breath."
+    - action: "end_session"

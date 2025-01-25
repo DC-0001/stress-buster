@@ -1,0 +1,11 @@
+ai_personalization_flow:
+  description: "Adapt therapy responses based on user preferences and past interactions."
+  nodes:
+    - type: "action"
+      name: "fetch_user_data"
+      api_call: "retrieve_user_profile"
+      next_node: "generate_response"
+    - type: "action"
+      name: "generate_response"
+      api_call: "ai_therapy_recommendation"
+      next_node: "therapy_choice"

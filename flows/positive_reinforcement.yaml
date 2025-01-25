@@ -1,0 +1,7 @@
+positive_reinforcement:
+  description: "Provide positive feedback and encouragement."
+  steps:
+    - message: "You’re doing great! Keep up the positive mindset."
+    - action: "display_positive_message"
+    - message: "Let’s continue with your progress."
+    - action: "end_session"

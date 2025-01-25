@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness Assistant</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mental Wellness Assistant</h1>
+        
+        <!-- User Input Section -->
+        <label for="userInput">How is your day going?</label>
+        <textarea id="userInput" rows="4" placeholder="Share how you're feeling..."></textarea>
+
+        <button id="submitInput">Submit</button>
+        <!-- Response Section -->
+        <div id="responseSection" >
+            <h2>Therapy Response: </h2>
+            <p id="response"></p>
+            
+            <!-- Therapy Feedback Section -->
+            <label for="therapyFeedback">How was the therapy?</label>
+            <textarea id="therapyFeedback" rows="4" placeholder="Provide feedback on the therapy..."></textarea>
+
+            <button id="submitFeedback">Submit Feedback</button>
+        </div>
+        
+        <!-- Final Result Section -->
+        <div id="resultSection" >
+            <h2>Final Results</h2>
+            <p id="finalResult"></p>
+            <h3>Calming Images</h3>
+            <div id="images"></div>
+            
+            <h3>Relaxing Sound</h3>
+            <button id="playSound">Play Relaxing Music</button>
+        </div>
+    </div>
+
+    <script src="./static/script.js"></script>
+</body>
+</html>

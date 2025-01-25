@@ -1,0 +1,13 @@
+ar_therapy_flow:
+  description: "Provide an AR-assisted therapy experience."
+  nodes:
+    - type: "prompt"
+      message: "Would you like to use AR for your therapy session?"
+      next_node: "start_ar_experience"
+    - type: "action"
+      name: "start_ar_experience"
+      api_call: "trigger_ar_scene"
+      next_node: "end_ar_experience"
+    - type: "message"
+      message: "Your AR therapy session is complete."
+      next_node: "session_end_flow"

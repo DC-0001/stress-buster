@@ -1,0 +1,61 @@
+version: "0.0.1"
+
+metadata:
+  flow_type: "compound"
+  name: "stress-buster"
+  description: "A mental wellness assistant using AI and AR"
+  author: "dc-0001"
+  tags: [mental-health, therapy, AI]
+  private: true
+
+inputs:
+  user_input:
+    type: string
+    description: "How is the day going?"
+    required: true
+    example: "I feel anxious today"
+  # user_feedback:
+  #   type: string
+  #   description: "How was the therapy?"
+  #   required: true
+  #   example: "It was challenging"
+
+workflow:
+  mood_analysis:
+    type: "elemental"
+    flow_name: "dc-0001/mood-tracking"
+    inputs:
+      feeling: ${inputs.user_input}
+
+  guided_therapy:
+    type: "elemental"
+    depends_on: [mood_analysis]
+    flow_name: "dc-0001/therapy-guide"
+    inputs:
+      mood_result: ${mood_analysis.output}
+
+
+
+  # ai_personalization:
+  #   type: "elemental"
+  #   depends_on: [guided_therapy]
+  #   flow_name: "dc-0001/therapy-personalisation"
+  #   inputs:
+  #     therapy_steps: ${guided_therapy.output}
+  #     therapy_feedback: ${inputs.user_feedback}
+
+output:
+  value:
+    # - ${mood_analysis.output}
+    - ${guided_therapy.output}
+    # - ${ai_personalization.output}
+
+readme: |
+  ## Psychological Therapy Flow
+  This flow helps users navigate mental health concerns through AI-based mood analysis, therapy recommendations, AR-assisted relaxation, and progress tracking.
+
+  ### Steps:
+  1. **Mood Analysis**: Detects emotional state from user input.
+  2. **Guided Therapy**: Suggests a therapy method.
+  3. **AI Personalization**: Customizes responses based on feedback provided.
+  

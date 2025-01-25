@@ -1,0 +1,9 @@
+session_end_flow:
+  description: "Wrap up the session and provide final feedback."
+  nodes:
+    - type: "message"
+      message: "Thank you for your session today. Keep up the good work!"
+    - type: "action"
+      name: "log_session"
+      api_call: "store_session_summary"
+    - type: "end"
